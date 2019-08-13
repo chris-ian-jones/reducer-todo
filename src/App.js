@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
-import TodoList from './components/TodoList'
+import './App.css'
 import AddForm from './components/AddForm'
+import TodoList from './components/TodoList'
 
 function App() {
   return (

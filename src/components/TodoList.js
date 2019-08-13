@@ -4,12 +4,12 @@ import { initialState, simpleReducer } from './../reducers/SimpleReducer'
 
 const TodoList = () => {
   const [state, dispatch] = useReducer(simpleReducer, initialState);
-  console.log(state);
+  console.log('todolist state: ', state)
 
   return (
     <div>
-      <p>placeholder TodoList component</p>
-      {state.map(todo => <ToDoTask completed={todo.completed} id={todo.id} item={todo.item} />)}
+      {/* <p>placeholder TodoList component</p> */}
+      {state.tasks.map(todo => <ToDoTask key={todo.id} completed={todo.completed} id={todo.id} item={todo.item} />)}
     </div>
   );
 }

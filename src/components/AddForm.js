@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import { Input, Button } from 'semantic-ui-react'
+import React, { useState, useReducer } from 'react';
 import { initialState, simpleReducer } from './../reducers/SimpleReducer'
+import ToDoTask from './ToDoTask'
+
 
 function AddForm() {
   const [inputState, setInputState] = useState('')
-  console.log(inputState)
+  
+
+  const [state, dispatch] = useReducer(simpleReducer, initialState);
+  console.log('AddForm state: ', state)
 
   const changeInputHandler = event => {
     setInputState(event.target.value)
@@ -12,18 +16,14 @@ function AddForm() {
 
   return (
     <div>
-      <form>
-        <Input 
-          size='huge'
+        <input 
           onChange={changeInputHandler}
           value={inputState}
           placeholder="Enter todo"
         />
-        <Button>Add Todo</Button>
-      </form>
+        <button onClick={() => dispatch({ type: 'ADD_TODO', payload: inputState })}>Add Todo</button>
     </div>
   );
 }
-
 
 export default AddForm;
