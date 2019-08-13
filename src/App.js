@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <h1>Todo!</h1>
       <AddForm />
-      <TodoList />
     </div>
   );
 }

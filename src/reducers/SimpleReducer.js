@@ -14,7 +14,7 @@ export const simpleReducer = (state, action) => {
           completed: false,
           id: Date.now()
         }
-      return [...state.tasks, newTodo];
+      return {...state, tasks: [...state.tasks, newTodo]}
 
     // case '':
     //   return {
