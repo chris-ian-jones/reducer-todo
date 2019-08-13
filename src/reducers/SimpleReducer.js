@@ -1,7 +1,7 @@
 export const initialState = {
   tasks: [{
     item: 'Learn about reducers',
-    completed: false,
+    completed: true,
     id: 3892987589
   }]
 };
@@ -16,10 +16,12 @@ export const simpleReducer = (state, action) => {
         }
       return {...state, tasks: [...state.tasks, newTodo]}
 
-    // case '':
-    //   return {
-       
-    //   };
+    case 'TOGGLE_COMPLETED':
+      return {
+        // toggleCompleted = payload => {
+           
+        // }
+      };
     default:
       return state;
   }
