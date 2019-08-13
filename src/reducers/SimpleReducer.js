@@ -17,11 +17,17 @@ export const simpleReducer = (state, action) => {
       return {...state, tasks: [...state.tasks, newTodo]}
 
     case 'TOGGLE_COMPLETED':
-      return {
-        // toggleCompleted = payload => {
-           
-        // }
-      };
+      return {...state, tasks: state.tasks.map(task => {
+        if (task.id === action.payload) {
+          return {
+            ...task,
+            completed: !task.completed
+          }
+        } else {
+          return task
+        }
+      })
+    };
     default:
       return state;
   }
