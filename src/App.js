@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css'
 import AddForm from './components/AddForm'
-import TodoList from './components/TodoList'
 
 function App() {
   return (
@@ -11,6 +10,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
