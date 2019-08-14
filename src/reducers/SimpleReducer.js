@@ -18,8 +18,13 @@ export const simpleReducer = (state, action) => {
 
     case 'TOGGLE_COMPLETED':
       return {...state, tasks: state.tasks.map(
-        task => task.id === action.payload ? {...task, completed: !task.completed} : task)
-      }
+        task => task.id === action.payload ? {...task, completed: !task.completed} : task
+      )}
+    
+    case 'CLEAR_COMPLETED':
+      return {...state, tasks: state.tasks.filter(
+        task => task.completed != true
+      )}  
 
     default:
       return state;

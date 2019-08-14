@@ -23,6 +23,7 @@ function AddForm() {
         />
         <button onClick={() => dispatch({ type: 'ADD_TODO', payload: inputState })}>Add Todo</button>
         {state.tasks.map(todo => <ToDoTask dispatch={dispatch} key={todo.id} completed={todo.completed} id={todo.id} item={todo.item} />)}
+        <button onClick={() =>dispatch({ type: 'CLEAR_COMPLETED', })}>Clear Completed</button>
     </div>
   );
 }
